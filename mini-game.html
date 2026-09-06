@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Dopamine Clicker!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+        h1 { font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <h1>Κλικ: <span id="counter">0</span></h1>
+    <button id="magic-btn">ΔΏΣΕ ΝΤΟΠΑΜΊΝΗ! ✨</button>
+
+    <script>
+        // Εδώ ξεκινάει η JavaScript - Η δράση!
+        let clicks = 0;
+        const button = document.getElementById('magic-btn');
+        const counter = document.getElementById('counter');
+
+        // Λίστα με τρελά χρώματα
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3', '#33FFF0'];
+
+        button.addEventListener('click', () => {
+            // 1. Αυξάνουμε τα κλικ
+            clicks = clicks + 1;
+            counter.innerText = clicks;
+
+            // 2. Διαλέγουμε ένα τυχαίο χρώμα από τη λίστα
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // 3. Αλλάζουμε το φόντο αμέσως!
+            document.body.style.backgroundColor = randomColor;
+        });
+    </script>
+
+</body>
+</html>

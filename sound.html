@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Dopamine Soundboard! 🔊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .grid { display: flex; gap: 20px; }
+        .sound-btn {
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.1s, filter 0.2s;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+        .sound-btn:active { transform: scale(0.9); }
+        /* Χρώματα για τα κουμπιά */
+        #btn1 { background-color: #ff007f; }
+        #btn2 { background-color: #00f0ff; }
+    </style>
+</head>
+<body>
+
+    <h1>Διάλεξε Ήχο! ⚡</h1>
+
+    <div class="grid">
+        <button class="sound-btn" id="btn1">Μουσική 🚀</button>
+        <button class="sound-btn" id="btn2">ΚΕΡΜΑ 🪙</button>
+    </div>
+
+    <script>
+        // Φορτώνουμε τους ήχους από το internet
+        const MusicLoopSound = new Audio('MusicLoop.wav');
+        const coinSound = new Audio('Coin.wav');
+
+        // Συνδέουμε το κουμπί 1 με τον ήχο λέιζερ
+        document.getElementById('btn1').addEventListener('click', () => {
+            MusicLoopSound.currentTime = 0; // Μηδενίζει τον χρόνο για να παίζει ξανά αν το πατήσεις γρήγορα
+            MusicLoopSound.play();
+        });
+
+        // Συνδέουμε το κουμπί 2 με τον ήχο κέρματος
+        document.getElementById('btn2').addEventListener('click', () => {
+            coinSound.currentTime = 0;
+            coinSound.play();
+        });
+    </script>
+
+</body>
+</html>

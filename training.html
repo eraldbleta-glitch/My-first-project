@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "secret" onclick="ShowTheSecret()"style="background-color: red; border: none; color: white; padding: 10px 20px 10px 20px;">Press me!</button>
+
+<script>
+let secret = "Welcome to my page!";
+function ShowTheSecret(){
+    document.getElementById("secret").innerHTML = secret;
+}
+
+</script>
+</body>
+</html>
