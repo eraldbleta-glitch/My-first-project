@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Style Switcher! 🌓</title>
+    <style>
+        /* 1. Το βασικό στυλ για το DARK MODE (Cyberpunk) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0e15;
+            color: #00ff9d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: all 0.4s ease; /* Κάνει την αλλαγή ομαλή */
+        }
+        
+        .box {
+            padding: 30px;
+            border: 2px solid #00ff9d;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,255,157,0.3);
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            background-color: #00ff9d;
+            color: #0d0e15;
+            transition: all 0.3s ease;
+        }
+
+        /* 2. Τι αλλάζει όταν μπαίνει το LIGHT MODE */
+        body.light-theme {
+            background-color: #f4f7f6;
+            color: #333333;
+        }
+
+        body.light-theme .box {
+            border: 2px solid #333333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body.light-theme button {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Λειτουργία: <span id="mode-text">Cyber Dark 🌌</span></h1>
+        <p>Πατώντας το κουμπί αλλάζει όλο το CSS class του body!</p>
+        <button id="theme-btn">ΑΛΛΑΓΗ ΣΤΥΛ 🌓</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const text = document.getElementById('mode-text');
+
+        btn.addEventListener('click', () => {
+            // Η JavaScript προσθέτει ή αφαιρεί το class "light-theme" από το body
+            document.body.classList.toggle('light-theme');
+
+            // Αλλάζουμε και το κείμενο για να ταιριάζει
+            if (document.body.classList.contains('light-theme')) {
+                text.innerText = "Light Minimal ☀️";
+            } else {
+                text.innerText = "Cyber Dark 🌌";
+            }
+        });
+    </script>
+
+</body>
+</html>

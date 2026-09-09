@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Count:<span id="count">0</span></p>
+    <button id="plusButt" style="background-color: blue; border: none; padding: 10px 20px 10px 20px; color: white;">+</button>
+    <button id="minusButt" style="background-color: red; border: none; padding: 10px 20px 10px 20px; color: white;">-</button>
+    <button id="reset" style="background-color: aquamarine; border: none; padding: 10px 20px 10px 20px; color: white;">Reset</button>
+    <script>
+        let count = 0;
+
+        let countDisplay = document.getElementById("count");
+
+        countDisplay.textContent = count;
+
+        let plusButt = document.getElementById("plusButt");
+        plusButt.addEventListener("click", function() {
+            count++;
+            countDisplay.textContent = count;
+        });
+
+        let minusButt = document.getElementById("minusButt");
+
+        minusButt.addEventListener("click", function() {
+            count--;
+            countDisplay.textContent = count;
+        });
+
+        let resetButt = document.getElementById("reset");
+
+        reset.addEventListener("click", function() {
+            count = 0;
+            countDisplay.textContent = count;
+        });
+    </script>
+</body>
+</html>
