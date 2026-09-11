@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input-length</title>
+</head>
+<body>
+    Name: <input id="input-value" type="text">
+    <p>Character-Length:<span id="charCount">0</span></p>
+    <p>Right-Characters:<span id="charRight"></span></p>
+
+    <script>
+        let input_value = document.getElementById("input-value");
+        let char = document.getElementById("charCount");
+        let charRight = document.getElementById("charRight");
+
+        input_value.addEventListener("input", function(){
+            char.textContent = input_value.value.length;
+            if(input_value.value.length < 5){
+                charRight.textContent = "Not Enough!";
+            }else if(input_value.value.length >= 10){
+                charRight.textContent = "Super!";
+            }else{
+                charRight.textContent = "Enough!:)";
+            }
+        })
+    </script>
+</body>
+</html>
