@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+</head>
+<body>
+    Προσθήκη: <input id="input_value" type="text">
+    <button id="addButton" style="background-color: seagreen; border: none; padding: 10px 20px 10px 20px; color: white;">Add</button>
+    <ul id="myList"></ul>
+
+    <script>
+        let myList = document.getElementById("myList");
+        let addButton = document.getElementById("addButton");
+        let input_value = document.getElementById("input_value");   
+
+        addButton.addEventListener("click", function(){
+            let newItem = document.createElement("li");
+            newItem.textContent = input_value.value;
+            myList.appendChild(newItem);
+        })
+    </script>
+</body>
+</html>
